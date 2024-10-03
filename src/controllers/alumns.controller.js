@@ -4,7 +4,7 @@ const service = new AlumnoService();
 
 const create = async (req, res) => {
     try{
-        service.crearAlumno(req.body);
+        const response = await service.crearAlumno(req.body);
         res.json({success: true, data: response});
     } catch(error){
         res.status(500).send({success: false, message: error.message})
@@ -13,7 +13,6 @@ const create = async (req, res) => {
 
 const get = async (req, res) => {
     try{
-        const {id} = req.params;
         const response = await service.getAlumnos();
         res.json(response);
     } catch(error){
@@ -23,6 +22,7 @@ const get = async (req, res) => {
 
 const getById = async (req, res)=>{
     try{
+        const {id} = req.params;
         const response = await service.getAlumno(id);
         res.json(response)
     } catch(error){

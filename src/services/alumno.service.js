@@ -19,13 +19,13 @@ class AlumnoService {
     }
 
     async updateAlumno(id, data){
-        const model = await this.findOne(id);
+        const model = await this.getAlumno(id);
         const actualizar = await model.update(data)
         return actualizar
     }
 
     async delete(id){
-        const model = await this.findOne(id);
+        const model = await this.getAlumno(id);
         await model.destroy();
         return {deleted:true};
     }

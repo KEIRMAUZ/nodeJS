@@ -1,11 +1,10 @@
-const express = require("express");
-const alumnnoRouter = require('./alumn.router')
+const express = require('express');
+const alumnosRouter = require('./alumn.router');
 
-function routerApi(app){
+function routerApi(app) {
     const router = express.Router();
-    app.use('/api/v1', router);
-    router.use('/alumnos', alumnnoRouter);
-    
+    app.use('/api', router);
+    router.use('/alumnos', alumnosRouter);
 }
 
 module.exports = routerApi;

@@ -3,10 +3,10 @@ const router = express.Router();
 const AlumnoController = require('../controllers/alumns.controller')
 
 router 
-    .get('/alumnos', AlumnoController.get)
-    .get('/alumnos/:id', AlumnoController.getById)
-    .post('/alumnos', AlumnoController.create)
-    .delete('/alumnos/:id', AlumnoController._delete)
-    .patch('/alumnos', AlumnoController.update);
+    .get('/', AlumnoController.get)
+    .get('/:id', AlumnoController.getById)
+    .post('/', AlumnoController.create)
+    .delete('/:id', AlumnoController._delete)
+    .patch('/:id', AlumnoController.update);
 
-module.exports = router
+module.exports = router 
